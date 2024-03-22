@@ -122,16 +122,12 @@ func deleteEvent(context *gin.Context) {
 
 	event, err := models.GetEventById(id)
 
-	log.Println("EVENTTTTT", event)
-
 	if err != nil {
 		context.JSON(http.StatusInternalServerError, gin.H{"message": err.Error()})
 		return
 	}
 
 	err = event.Delete()
-
-	log.Println("EVENTTTTT AFTER DLEETE", event)
 
 	if err != nil {
 		context.JSON(http.StatusInternalServerError, gin.H{"message": err.Error()})
