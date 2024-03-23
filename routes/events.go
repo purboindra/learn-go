@@ -1,7 +1,6 @@
 package routes
 
 import (
-	"example/rest_api/db"
 	"example/rest_api/models"
 	"fmt"
 	"log"
@@ -47,7 +46,6 @@ func getEvents(context *gin.Context) {
 }
 
 func createEvent(context *gin.Context) {
-	db.InitDB()
 	var event models.Event
 	err := context.ShouldBindJSON(&event)
 
