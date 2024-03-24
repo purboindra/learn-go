@@ -73,7 +73,7 @@ func createTables() {
 
 	if err != nil {
 		log.Println(err)
-		panic("Could no create registrations table")
+		panic("Could not create registrations table")
 	}
 
 }
